@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAM NAM BURGERS | The Burger You Crave</title>
+    <meta name="description" content="Best smash burgers in Skopje. Bold flavors, fast service, urban vibe.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        neon: {
+                            green: '#e64b31', // lime-400
+                            red: '#f43f5e',   // rose-500
+                            yellow: '#facc15' // yellow-400
+                        },
+                        dark: {
+                            900: '#09090b', // zinc-950
+                            800: '#18181b', // zinc-900
+                        }
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a3e635; }
+
+        /* Sauce Drip Effect */
+        .drip-bg {
+            background-image: radial-gradient(circle at center, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+        }
+        
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-zinc-50 font-sans antialiased overflow-x-hidden pb-20 md:pb-0">
+
+    <div class="bg-neon-yellow text-black text-center py-2 px-4 text-xs md:text-sm font-bold uppercase tracking-wider z-50 relative">
+        <span class="animate-pulse inline-block mr-2">🔥</span> 
+        Combo deals available - Order now & get free fries!
+        <span class="animate-pulse inline-block ml-2">🔥</span>
+    </div>
+
+    <header id="navbar" class="fixed top-8 w-full z-40 transition-all duration-300 py-4 px-6 md:px-12 bg-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+       <a href="#" class="flex items-center gap-3">
+    <img 
+        src="namnam-logo.jpg"
+        alt="Nam Nam Burgers Logo"
+        class="md:w-20 md:h-20 rounded-full object-cover border-2 border-neon-green"
+    >
+    </span>
+</a>
+            <nav class="hidden md:flex gap-8 font-bold uppercase tracking-wide text-sm">
+                <a href="#menu" class="hover:text-neon-green transition-colors">Menu</a>
+                <a href="#about" class="hover:text-neon-green transition-colors">Why Us</a>
+                <a href="#location" class="hover:text-neon-green transition-colors">Location</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button class="hidden md:flex bg-neon-green text-black font-black uppercase tracking-wider px-6 py-2.5 rounded-full hover:bg-lime-300 hover:shadow-[0_0_20px_rgba(163,230,53,0.5)] transition-all transform active:scale-95 items-center gap-2">
+                    Order Now <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark-900/60 via-dark-900/80 to-dark-900 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=2000" alt="Delicious Smash Burger" class="w-full h-full object-cover object-center scale-105" />
+        </div>
+
+        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto mt-10">
+            <div class="inline-block bg-neon-red text-white font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest text-sm animate-float">
+                ⚡ Order now — fresh off the grill
+            </div>
+            <h1 class="font-display font-black text-6xl md:text-8xl lg:text-9xl uppercase tracking-tighter leading-none mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-400">
+                The Burger<br><span class="text-neon-green">You Crave.</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-medium text-zinc-300 mb-10 tracking-wide">
+                Smash burgers. Bold flavor. No compromise.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="w-full sm:w-auto bg-neon-green text-black font-black uppercase tracking-wider px-8 py-4 rounded-full text-lg hover:bg-lime-300 hover:shadow-[0_0_30px_rgba(163,230,53,0.6)] transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2">
+                    Order Now <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+                <a href="#menu" class="w-full sm:w-auto bg-transparent border-2 border-white text-white font-black uppercase tracking-wider px-8 py-4 rounded-full text-lg hover:bg-white hover:text-black transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center">
+                    View Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-neon-green text-black py-3 border-y-4 border-black overflow-hidden relative flex z-30">
+        <div class="whitespace-nowrap animate-marquee flex gap-10 font-black uppercase tracking-widest text-sm md:text-base items-center">
+            <span>Loved in Skopje 🍔</span>
+            <span>•</span>
+            <span>Fast delivery 🛵</span>
+            <span>•</span>
+            <span>Fresh ingredients 🥬</span>
+            <span>•</span>
+            <span>100% beef patties 🥩</span>
+            <span>•</span>
+            <span>No frozen. No shortcuts. ⚡</span>
+            <span>•</span>
+            <span>Loved in Skopje 🍔</span>
+            <span>•</span>
+            <span>Fast delivery 🛵</span>
+            <span>•</span>
+            <span>Fresh ingredients 🥬</span>
+            <span>•</span>
+            <span>100% beef patties 🥩</span>
+            <span>•</span>
+            <span>No frozen. No shortcuts. ⚡</span>
+        </div>
+    </div>
+
+    <section id="menu" class="py-24 px-6 max-w-7xl mx-auto drip-bg">
+        <div class="text-center mb-16">
+            <h2 class="font-display font-black text-4xl md:text-6xl uppercase tracking-tighter mb-4">Cult <span class="text-neon-yellow">Classics</span></h2>
+            <p class="text-zinc-400 text-lg">One bite. You're hooked.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-dark-800 rounded-2xl overflow-hidden group border border-zinc-800 hover:border-neon-green transition-colors relative">
+                <div class="absolute top-4 right-4 bg-neon-red text-white text-xs font-black uppercase px-3 py-1 rounded-full z-10">Best Seller</div>
+                <div class="h-56 overflow-hidden bg-zinc-900">
+                    <img src="smashburger.png" alt="Smash Burger" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-display font-black text-2xl uppercase mb-2">OG Smash</h3>
+                    <p class="text-zinc-400 text-sm mb-6 h-10">Juicy smashed beef, house pickles, melted cheese + signature Nam Nam sauce.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-black text-xl text-neon-green">250 MKD</span>
+                        <button class="bg-white text-black p-3 rounded-full hover:bg-neon-green transition-colors transform active:scale-90" aria-label="Add to cart">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-2xl overflow-hidden group border border-zinc-800 hover:border-neon-yellow transition-colors relative">
+                <div class="h-56 overflow-hidden bg-zinc-900">
+                    <img src="https://images.unsplash.com/photo-1586816001966-79b736744398?auto=format&fit=crop&q=80&w=600" alt="Double Smash" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-display font-black text-2xl uppercase mb-2">Double Trouble</h3>
+                    <p class="text-zinc-400 text-sm mb-6 h-10">Two smashed patties, double cheese, caramelized onions.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-black text-xl text-neon-yellow">340 MKD</span>
+                        <button class="bg-white text-black p-3 rounded-full hover:bg-neon-yellow transition-colors transform active:scale-90" aria-label="Add to cart">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-2xl overflow-hidden group border border-zinc-800 hover:border-neon-red transition-colors relative">
+                <div class="absolute top-4 right-4 bg-zinc-800 text-white text-xs font-black uppercase px-3 py-1 rounded-full z-10 border border-zinc-700">Spicy</div>
+                <div class="h-56 overflow-hidden bg-zinc-900">
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&q=80&w=600" alt="Spicy Burger" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-display font-black text-2xl uppercase mb-2">El Fuego</h3>
+                    <p class="text-zinc-400 text-sm mb-6 h-10">Smashed beef, jalapeños, pepper jack, spicy mayo.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-black text-xl text-neon-red">280 MKD</span>
+                        <button class="bg-white text-black p-3 rounded-full hover:bg-neon-red hover:text-white transition-colors transform active:scale-90" aria-label="Add to cart">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark-800 rounded-2xl overflow-hidden group border border-zinc-800 hover:border-white transition-colors relative">
+                <div class="h-56 overflow-hidden bg-zinc-900">
+                    <img src="https://images.unsplash.com/photo-1625869016774-3a92be2ae2cd?auto=format&fit=crop&q=80&w=600" alt="Crispy Fries" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-display font-black text-2xl uppercase mb-2">Dirty Fries</h3>
+                    <p class="text-zinc-400 text-sm mb-6 h-10">Crispy crinkle-cut fries loaded with cheese sauce & beef.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-black text-xl text-white">180 MKD</span>
+                        <button class="bg-white text-black p-3 rounded-full hover:bg-zinc-300 transition-colors transform active:scale-90" aria-label="Add to cart">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-dark-800 py-24 border-y border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="text-center group">
+                    <div class="w-20 h-20 mx-auto bg-dark-900 rounded-2xl flex items-center justify-center mb-6 border border-zinc-800 group-hover:border-neon-red group-hover:shadow-[0_0_20px_rgba(244,63,94,0.3)] transition-all transform group-hover:-translate-y-2">
+                        <i data-lucide="flame" class="w-10 h-10 text-neon-red"></i>
+                    </div>
+                    <h4 class="font-display font-black text-xl uppercase mb-3">Smash Technique</h4>
+                    <p class="text-zinc-400 text-sm">Pressed hard on a screaming hot grill for maximum crust and flavor.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-20 h-20 mx-auto bg-dark-900 rounded-2xl flex items-center justify-center mb-6 border border-zinc-800 group-hover:border-neon-green group-hover:shadow-[0_0_20px_rgba(163,230,53,0.3)] transition-all transform group-hover:-translate-y-2">
+                        <i data-lucide="beef" class="w-10 h-10 text-neon-green"></i>
+                    </div>
+                    <h4 class="font-display font-black text-xl uppercase mb-3">100% Real Beef</h4>
+                    <p class="text-zinc-400 text-sm">High-quality, locally sourced beef. Never frozen, crafted fresh daily.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-20 h-20 mx-auto bg-dark-900 rounded-2xl flex items-center justify-center mb-6 border border-zinc-800 group-hover:border-neon-yellow group-hover:shadow-[0_0_20px_rgba(250,204,21,0.3)] transition-all transform group-hover:-translate-y-2">
+                        <i data-lucide="zap" class="w-10 h-10 text-neon-yellow"></i>
+                    </div>
+                    <h4 class="font-display font-black text-xl uppercase mb-3">Fast Service</h4>
+                    <p class="text-zinc-400 text-sm">We value your time. Hot, fresh, and ready when you crave it.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-20 h-20 mx-auto bg-dark-900 rounded-2xl flex items-center justify-center mb-6 border border-zinc-800 group-hover:border-white group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all transform group-hover:-translate-y-2">
+                        <i data-lucide="sparkles" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h4 class="font-display font-black text-xl uppercase mb-3">Bold Flavors</h4>
+                    <p class="text-zinc-400 text-sm">Unique sauce combos and urban recipes you won't find anywhere else.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-neon-green text-black px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+            <div>
+                <h2 class="font-display font-black text-4xl md:text-5xl uppercase tracking-tighter mb-4">Build Your Own</h2>
+                <p class="text-lg font-medium mb-6">Choose your patties, stack your cheese, and pick your favorite sauces. Make it yours.</p>
+                <button class="bg-black text-neon-green font-black uppercase tracking-wider px-8 py-4 rounded-full text-lg hover:bg-zinc-900 transition-all transform hover:-translate-y-1 active:scale-95">
+                    Start Building
+                </button>
+            </div>
+            <div class="relative w-full md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&q=80&w=600" alt="Burger Ingredients" class="w-64 h-64 object-cover rounded-full border-8 border-black shadow-2xl">
+                <div class="absolute top-0 right-10 bg-white text-black text-xs font-bold px-3 py-1 rounded-full border-2 border-black rotate-12">Extra beef</div>
+                <div class="absolute bottom-10 left-0 bg-white text-black text-xs font-bold px-3 py-1 rounded-full border-2 border-black -rotate-12">Truffle Mayo</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+                <h2 class="font-display font-black text-4xl md:text-5xl uppercase tracking-tighter mb-2">Join The <span class="text-neon-red">Hype</span></h2>
+                <p class="text-zinc-400">Tag us @NamNamBurgers to get featured.</p>
+            </div>
+            <a href="#" class="bg-dark-800 border border-zinc-700 hover:border-white text-white font-bold px-6 py-3 rounded-full transition-all flex items-center gap-2">
+                <i data-lucide="instagram" class="w-5 h-5"></i> Follow Us
+            </a>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="aspect-square bg-zinc-900 rounded-xl overflow-hidden group cursor-pointer relative">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                    <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+                </div>
+                <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Insta 1">
+            </div>
+            <div class="aspect-square bg-zinc-900 rounded-xl overflow-hidden group cursor-pointer relative">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                    <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+                </div>
+                <img src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Insta 2">
+            </div>
+            <div class="aspect-square bg-zinc-900 rounded-xl overflow-hidden group cursor-pointer relative">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                    <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+                </div>
+                <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Insta 3">
+            </div>
+            <div class="aspect-square bg-zinc-900 rounded-xl overflow-hidden group cursor-pointer relative">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                    <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+                </div>
+                <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&q=80&w=500" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Insta 4">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-dark-800 border-y border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="font-display font-black text-center text-3xl md:text-5xl uppercase tracking-tighter mb-16">Word on the <span class="text-neon-yellow">Street</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-dark-900 p-8 rounded-2xl border border-zinc-800 relative">
+                    <div class="flex gap-1 text-neon-yellow mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-lg font-bold mb-4">"Best burger in Skopje 🔥"</p>
+                    <p class="text-zinc-400 text-sm">The smash technique is legit. Crispy edges, juicy middle. Unreal.</p>
+                    <p class="text-white font-bold mt-6 text-sm uppercase tracking-wider">— Marko S.</p>
+                </div>
+                <div class="bg-dark-900 p-8 rounded-2xl border border-zinc-800 relative">
+                    <div class="flex gap-1 text-neon-yellow mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-lg font-bold mb-4">"You'll come back again"</p>
+                    <p class="text-zinc-400 text-sm">Ordered via Wolt. Arrived hot and the fries were still crispy. New favorite spot.</p>
+                    <p class="text-white font-bold mt-6 text-sm uppercase tracking-wider">— Elena K.</p>
+                </div>
+                <div class="bg-dark-900 p-8 rounded-2xl border border-zinc-800 relative">
+                    <div class="flex gap-1 text-neon-yellow mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-lg font-bold mb-4">"Not just another burger"</p>
+                    <p class="text-zinc-400 text-sm">The spicy burger actually has a kick to it. Exactly what I was looking for.</p>
+                    <p class="text-white font-bold mt-6 text-sm uppercase tracking-wider">— Stefan T.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1 h-96 bg-zinc-800 rounded-2xl overflow-hidden border border-zinc-700 relative">
+                <div class="absolute inset-0 bg-dark-900 flex flex-col items-center justify-center text-zinc-500">
+                    <i data-lucide="map" class="w-16 h-16 mb-4 opacity-50"></i>
+                    <p class="uppercase tracking-widest text-sm font-bold">Interactive Map Load</p>
+                    <p class="text-xs mt-2">Centar, Skopje</p>
+                </div>
+            </div>
+            
+            <div class="order-1 lg:order-2">
+                <h2 class="font-display font-black text-4xl md:text-5xl uppercase tracking-tighter mb-8">Find <span class="text-neon-green">Us</span></h2>
+                
+                <div class="space-y-6 mb-10">
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-neon-green shrink-0 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-lg uppercase">Address</h4>
+                            <p class="text-zinc-400">Blvd. Partizanski Odredi 12<br>1000 Skopje, North Macedonia</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="clock" class="w-6 h-6 text-neon-yellow shrink-0 mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-lg uppercase">Hours</h4>
+                            <p class="text-zinc-400">Mon - Sun: 11:00 AM - 1:00 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-800 p-6 rounded-xl border border-zinc-800">
+                    <h4 class="font-black uppercase tracking-wider mb-4">Order Delivery</h4>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-blue-500 text-white font-bold px-6 py-3 rounded-full hover:bg-blue-400 transition-colors flex items-center gap-2">
+                            Order via Wolt
+                        </button>
+                        <button class="bg-neon-green text-black font-bold px-6 py-3 rounded-full hover:bg-lime-300 transition-colors flex items-center gap-2">
+                            Direct Order (Pickup)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-[url('https://images.unsplash.com/photo-1554306274-f23873d9a26c?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center relative">
+        <div class="absolute inset-0 bg-dark-900/90 z-0"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-display font-black text-5xl md:text-7xl uppercase tracking-tighter mb-6">Ready for your next <span class="text-neon-green">Burger?</span></h2>
+            <p class="text-xl text-zinc-300 mb-10 font-medium">Just real burgers. High-quality ingredients. Delivered hot.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="w-full sm:w-auto bg-neon-green text-black font-black uppercase tracking-wider px-10 py-5 rounded-full text-lg hover:bg-lime-300 hover:shadow-[0_0_30px_rgba(163,230,53,0.6)] transition-all transform hover:-translate-y-1 active:scale-95">
+                    Order Now
+                </button>
+                <a href="#menu" class="w-full sm:w-auto bg-transparent border-2 border-white text-white font-black uppercase tracking-wider px-10 py-5 rounded-full text-lg hover:bg-white hover:text-black transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center">
+                    View Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 border-t border-zinc-900 pb-24 md:pb-12 text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <a href="#" class="font-display font-black text-2xl tracking-tighter uppercase text-white mb-2 block">
+                    Nam Nam <span class="text-neon-green">Burgers</span>
+                </a>
+                <p class="text-zinc-500 text-sm">© 2026 Nam Nam Burgers Skopje. All rights reserved.</p>
+            </div>
+            <div class="flex gap-6 text-zinc-400">
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="md:hidden fixed bottom-0 left-0 w-full p-4 bg-dark-900/95 backdrop-blur-md border-t border-zinc-800 z-50">
+        <button class="w-full bg-neon-green text-black font-black uppercase tracking-wider px-6 py-4 rounded-full text-lg hover:bg-lime-300 transition-colors flex justify-center items-center gap-2 shadow-[0_0_15px_rgba(163,230,53,0.3)]">
+            Order Now <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+        </button>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        const headerTopOffset = 32; // 8rem initial top
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('top-8', 'bg-transparent');
+                navbar.classList.add('top-0', 'bg-dark-900/90', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-zinc-800', 'py-3');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('top-8', 'bg-transparent', 'py-4');
+                navbar.classList.remove('top-0', 'bg-dark-900/90', 'backdrop-blur-md', 'shadow-lg', 'border-b', 'border-zinc-800', 'py-3');
+            }
+        });
+    </script>
+</body>
+</html>
